@@ -1,16 +1,4 @@
 "resource/layout/gamespage_details_subheaderright.layout" {
-	controls {
-		subheaderlabels {
-			controlname="CDetailsSubHeaderLabelsRightPanel"
-		}
-
-		gamehubbutton {
-			controlname="Button"
-			labeltext="#steam_gamehub"
-			style="DetailsButton"
-		}
-	}
-
 	colors {
 		GameDetailsSubHeader.HorizontalSpacing=10
 		GameDetailsSubHeader.VerticalMargin=0
@@ -18,29 +6,26 @@
 		gamehubbgbottom="54 74 99 255"
 		gamehubborder="74 100 133 255"
 	}
-
 	styles {
 		CDetailsGameSubHeaderRightPanel {
 			bgcolor=red
 		}
-
-		DetailsButton {   
-			inset="-3 0 0 0"
+		DetailsButton {
+			bgcolor=none
+			textcolor="Text"
 			font-family=basefont
 			font-size=15
+font-size=14 [$LINUX]
 			font-weight=400
-			textcolor="Text"
-			bgcolor=none
-
+			inset="-3 0 0 0"
 			render_bg {
 				// background fill
 				0="gradient( x0 + 1, y0 + 1, x1 - 1, y1 - 1, gamehubbgtop, gamehubbgbottom )"
-
 				1="fill( x0 + 2, y0, x1 - 2, y0 + 1, gamehubborder )"  // top
 				2="fill( x0 + 2, y1 - 1, x1 - 2, y1, gamehubborder )"  // bottom
 				3="fill( x0, y0 + 2, x0 + 1, y1 - 2, gamehubborder )"  // left
 				4="fill( x1 - 1, y0 + 2, x1, y1 - 2, gamehubborder )"  // right
-				
+
 				5="fill( x0 + 1, y0 + 1, x0 + 2, y0 + 2, gamehubborder )"
 				6="fill( x1 - 2, y0 + 1, x1 - 1, y0 + 2, gamehubborder )"
 				7="fill( x0 + 1, y1 - 2, x0 + 2, y1 - 1, gamehubborder )"
@@ -53,30 +38,28 @@
 				14="fill( x1 - 2, y0, x1 - 1, y0 + 1, gamehubborder )"
 				15="fill( x0 + 1, y1 - 1, x0 + 2, y1, gamehubborder )"
 				16="fill( x1 - 2, y1 - 1, x1 - 1, y1, gamehubborder )"
-			}	
+			}
 		}
-		
-		DetailsButton:hover {
-			textcolor="white"
-		}
-		
-		DetailsButton:active {
-			textcolor="white"
-			inset="-2 1 0 0"
-		}
-	}
 
+			DetailsButton:hover {
+				textcolor="white"
+			}
+
+			DetailsButton:active {
+				textcolor="white"
+				inset="-2 1 0 0"
+			}
+	}
 	layout {
 		// Y offset here should match the vertical padding value above in the colors section
-		region { 
-			name="header" 
-			y=0
+		region {
+			name="header"
 			x=0
+			y=0
 			width=max
 			height=max
 		}
-
-		place { 
+		place {
 			control=subheaderlabels,gamehubbutton
 			region=header
 			dir=right

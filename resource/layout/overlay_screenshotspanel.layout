@@ -1,67 +1,62 @@
 "resource/layout/overlay_screenshotspanel.layout" {
-	controls {}
-	
 	colors {
 		lightestBlue="137 235 255 255"
-	}	
-	
+	}
+
 	styles {
 		button {
-			font-size=14
+			textcolor=blue
+			font-size=15
+font-size=14 [$LINUX]
 			font-family=basefont
-			
-			inset-left=0
 			padding-left=24
 			padding-top=0
 			padding-bottom=15
-			
-			textcolor=blue
-			
+			inset-left=0
+
 			render_bg {
 				0="image(x0,y0,x0+26,y1, graphics/overlay/screenshots)"
 			}
 		}
-		
+
 			button:hover {
 				textcolor=lightestBlue
-				
+
 				render {
 					1="image(x0,y0,x0+26,y1, graphics/overlay/screenshots_hover)"
 				}
-				
 				render_bg {}
 			}
-		
+
 		highlight {
-			textcolor=lightestGreyHighlight
-			font-size=12
+			textcolor=lightestGrey
+			font-size=14
 		}
 	}
-	
+
 	layout {
 		region {
 			name=box
 			width=max
 			height=max
 		}
-		
+
 		place {
 			controls=ViewScreenshots
 			region=box
-			y=0
 			x=0
+			y=0
 			width=max
 		}
-		
+
 		place {
 			controls=InstructionText
 			start=ViewScreenshots
-			dir=down
-			y=-14
 			x=30
+			y=-14
+			dir=down
 		}
-		
-		
+
 		place {
 			control="TitleText,SetShortcut"
 			width=0

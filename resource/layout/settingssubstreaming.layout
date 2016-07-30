@@ -1,117 +1,171 @@
 "resource/layout/settingssubstreaming.layout" {
-	styles {}
+	styles {
+		ListPanelColumnheader [$OSX] {
+			bgcolor="none"
+			textcolor="white"
+			font-family=semibold
+			font-size=15
+font-size=14 [$LINUX]
+			font-weight=400
+			font-style="regular,normal"
+			inset="1 2 0 0"
 
+			render_bg {
+				// fill
+				0="gradient(x0,y0,x1,y1, grey, lightGreyEnd)"
+				1="fill(x0,y0,x1,y0+1, greyHighlight)"
+			}
+		}
+
+		ListPanelColumnheader [!$OSX] {
+			bgcolor="none"
+			textcolor= "white"
+			font-family=semibold
+			font-size=14
+			font-weight=400
+			font-style="regular,normal"
+			inset= "0 0 0 0"
+
+			render {
+				0="fill(x0,y1,x1,y1+1, black65)"
+				1="fill(x0,y0,x1,y0+1, greyHighlight)"
+			}
+			render_bg {
+				1="gradient(x0,y0,x1,y1, grey, lightGreyEnd)"
+			}
+		}
+
+		ListPanelColumnHeader:hover {
+			textcolor= "white"
+
+			render_bg {
+				0="fill(x0,y0,x1,y0+1, lightestGreyHighlight)"
+				1="gradient(x0,y0,x1,y1+1, lighterGrey, grey)"
+			}
+		}
+		ListPanelDragger {
+			bgcolor= "none"
+			render {
+				//fill makes dragger visible
+				2="fill( x0, y0, x0 + 1, y1, darkGrey )" // left
+			}
+		}
+
+		"Page ListPanelDragger" {
+			bgcolor= "none"
+
+			render {
+				//fill makes dragger visible
+				2="fill( x0, y0, x0 + 1, y1, darkGrey )" // left
+			}
+		}
+	}
 	layout {
 		place {
 			control="AdvancedHostOptions,AdvancedClientOptions"
 			height=24
 		}
-		
+
 		place {
 			control=DescriptionLabel
-			dir=down
-			width=max
-			x=18 
+			x=18
 			y=21
+			width=max
 			margin-right=43
+			dir=down
 		}
-		
+
 		place {
 			control=RemoteClientList
 			start=DescriptionLabel
-			dir=down
-			width=max
 			y=8
+			width=max
 			margin-right=43
+			dir=down
 		}
-		
+
 		place {
 			control=EnableStreaming
 			start=RemoteClientList
-			dir=down
-			width=max
 			y=8
-			
+			width=max
+			dir=down
 		}
-
 		place {
 			control=HostDivider
 			start=EnableStreaming
-			dir=down
-			width=max
 			y=16
+			width=max
 			margin-right=43
+			dir=down
 		}
-		
+
 		place {
 			control=HostLabel
 			start=HostDivider
-			dir=down
-			width=max
 			y=16
+			width=max
+			dir=down
 		}
-		
+
 		place {
 			control=UnsupportedPlatform
 			start=HostLabel
-			dir=down
-			width=max
 			y=8
+			width=max
+			dir=down
 		}
-		
+
 		place {
 			control=AdvancedHostOptions
 			start=HostLabel
-			dir=down
+			y=8
 			width=340
-			y=16
+			dir=down
 		}
-		
+
 		place {
 			control=ClientDivider
 			start=AdvancedHostOptions
-			dir=down
-			width=max
 			y=16
+			width=max
 			margin-right=43
+			dir=down
 		}
-		
 		place {
 			control=ClientLabel
 			start=ClientDivider
-			dir=down
-			width=max
 			y=16
+			width=max
+			dir=down
 		}
-
 		place {
 			control=QualityFast
 			start=ClientLabel
-			dir=down
 			y=8
+			dir=down
 		}
-		
+
 		place {
 			control="QualityBalanced,QualityBeautiful"
 			start=QualityFast
+			x=16
 			dir=right
 			spacing=16
 		}
-
 		place {
 			control=AdvancedClientOptions
 			start=QualityFast
-			dir=down
+			y=8
 			width=340
 			height=28
-			y=16	
+			dir=down
 		}
-
 		place {
 			control=SupportInformationLabel
-			dir=down
 			start=AdvancedClientOptions
-			y=16
-		}		
+			y=8
+			dir=down
+		}
 	}
 }

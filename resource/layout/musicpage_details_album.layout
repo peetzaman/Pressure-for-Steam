@@ -1,236 +1,168 @@
-"resource/layout/musicpage_details_album.layout"
-{
-	controls
-	{
-		AlbumTitleLabel { controlname="Label" style="AlbumTitleStyle" }
-		ArtistLabel { controlname="Label" style="ArtistStyle" }
-		TracksInfoLabel { controlname="Label" style="TracksInfoStyle" }
-		CoverImage { controlname="ImagePanel" style="CoverStyle" scaling=fit}
-		
-		PlayTracksButton { 
-			controlname="Button" 
-			labeltext="#Music_Album_Details_PlayTracks" 
-			style="ActionButtonStyle"
-			command="AlbumPlayTracksAction"
-		}
-		
-
-		AddTracksToQueueButton
-		{
-			controlname="Button" 
-			labelText="#Music_Album_Details_AddTracksToQueue" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumAddTracksToQueueAction"
-		}	
-
-		AddTracksToPlaylistButton
-		{
-			controlname="Button" 
-			labelText="#Music_Album_Details_AddTracksToPlaylist" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumAddTracksToPlaylistAction"
-		}
-		
-		ShowAlbumButton { 
-			controlname="Button" 
-			labeltext="#Music_Album_Details_ShowAlbum" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumShowAction"
-		}
-		
-		PlayAlbumButton { 
-			controlname="Button" 
-			labeltext="#Music_Album_Details_Play" 
-			style="ActionButtonStyle"
-			command="AlbumPlayAction"
-		}
-		
-		AddAlbumToQueueButton
-		{
-			controlname="Button" 
-			labelText="#Music_Album_Details_AddToQueue" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumAddToQueueAction"
-		}
-		
-		AddAlbumToPlaylistButton
-		{
-			controlname="Button" 
-			labelText="#Music_Album_Details_AddToPlaylist" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumAddToPlaylistAction"
-		}
-		
-		ShowAlbumInSystemButton
-		{
-			controlname="Button" 
-			labelText="#Music_Album_Details_ShowAlbumInSystem" 
-			style="AdditionalActionButtonStyle"
-			command="AlbumShowAlbumInSystemAction"
-		}	
-		
-		
-	}
-
-	styles
-	{
-		CMusicPage_Details_Album
-		{
+"resource/layout/musicpage_details_album.layout" {
+	styles {
+		CMusicPage_Details_Album {
 			bgcolor=none
-			render
-			{				
+			minimum-height=350
 
-			}
-			render_bg 
-			{				
-
-			}
-		}
-		
-		AlbumTitleStyle
-		{
-			padding-bottom=8
-			padding-top=8
-			padding-left=10
-			padding-right=10
-			font-size=30
-			textcolor=Text
-			font-family=basefont
-			font-weight=400 
-			bgcolor=BackgroundStart
+			render {}
+			render_bg {}
 		}
 
-		ArtistStyle
-		{
-			padding-bottom=5
-			padding-top=10
-			padding-left=10
-			padding-right=10
+		AlbumTitleStyle {
+			bgcolor=black65
+			textcolor=white
+			font-size=48
+			font-family=headerfont
+			font-weight=400
+			inset="240 20 0 0"
+			padding-bottom=60
+		}
+		ArtistStyle {
+			bgcolor=none
+			textcolor=white
 			font-size=20
-			textcolor=Text
 			font-family=basefont
-			font-weight=400 
-			bgcolor=none
+			font-weight=600
 		}
-		
-		TracksInfoStyle
-		{
-			padding-bottom=0
-			padding-top=0
-			padding-left=0
-			padding-right=10
-			font-size=15
-			textcolor=labeldisabled
-			font-family=basefont
-			font-weight=400 
-			bgcolor=none
-		}
-		
-		TrackStyle
-		{
-			padding-bottom=10
-			padding-top=0
-			font-size=15
-			textcolor=Text2
-			font-family=basefont
-			font-weight=400 
-			bgcolor=none
-		}
-		
-		TrackStyle:hover
-		{
-			textcolor="text"
-		}
-		
-		CoverStyle
-		{
 
-		}
-		
-		AdditionalActionButtonStyle
-		{
-			font-size=14
-			font-size=13 [$OSX]
+		TracksInfoStyle {
+			bgcolor=none
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 			font-family=basefont
-			textcolor="label"
-			padding-right=0
-			padding-left=-6
-			padding-top=6
-			padding-bottom=-6
+			font-weight=400
+			padding-left=0
+			padding-top=0
+			padding-right=10
+			padding-bottom=0
+		}
+
+		TrackStyle {
+			bgcolor=black65
+			textcolor=Text2
+			font-size=15
+font-size=14 [$LINUX]
+			font-family=basefont
+			font-weight=400
+			padding-top=0
+			padding-bottom=10
+		}
+
+			TrackStyle:hover {
+				textcolor="text"
+			}
+
+		CoverStyle {
+			render {
+				0="image(x0-10,y0-10,x1+10,y1+10, graphics/album_shadow)"
+			}
+		}
+
+		AdditionalActionButtonStyle {
+			textcolor=blue
+			font-size=16
+font-size=15
+font-size=14 [$LINUX]
+			font-family=basefont
+			padding-top=0
+			padding-bottom=0
+
 			render_bg	{}
 		}
-		
-		AdditionalActionButtonStyle:hover
-		{
-			textcolor="labelfocus"
-		}
-		
-		
-		ActionButtonStyle
-		{   
-			inset="16 0 0 0"
 
-			font-family=basefont
-			font-size=16
-			font-weight=400
-			textcolor="white"
-			font-style=uppercase
-			bgcolor=none
-
-			render
-			{
-				1="image( x0 + 0, y0 + 8, x1, y1, graphics/icon_play )"
+			AdditionalActionButtonStyle:hover {
+				textcolor=lightestBlue
 			}
-			render_bg
-			{
-				// background fill
-				0="gradient( x0, y0, x1, y1+0, launch1, launch2 )"
-			}	
+
+
+		ActionButtonStyle {
+			bgcolor=none
+			textcolor=none
+			minimum-width=200
+			minimum-height=200
+
+			render {
+				0="image(x0,y0,x1,y1, graphics/music/library_play)"
+			}
 		}
-			
-		ActionButtonStyle:hover
-		{
-			textcolor="white"
-			render
-			{
-				0="image( x0 + 0, y0 + 8, x1, y1, graphics/icon_play )"
-			}	
-			render_bg
-			{
-			// background fill
-				0="gradient( x0, y0, x1, y1+0, launch0, launch2  )"
-			}			
-		}
-		
-		ActionButtonStyle:active
-		{
-			textcolor="white"
-			render
-			{
-				0="image( x0 + 6, y0 + 5, x1, y1, graphics/icon_play )"
-			}	
-			render_bg
-			{
-			// background fill
-				0="gradient( x0, y0, x1, y1+1, focus, launch2 )"
-			}			
-		}
+
+			ActionButtonStyle:hover {
+				render {
+					0="image(x0,y0,x1,y1, graphics/music/library_play_hover)"
+				}
+			}
+
+			ActionButtonStyle:active {
+				render {
+					0="image(x0,y0,x1,y1, graphics/music/library_play_hover)"
+				}
+			}
 	}
 
-	layout
-	{
-		region { name=bodyregion x=10 y=10 width=max height=max overflow=scroll-vertical }		
-		region { name=headerregion x=10 y=20 width=max height=max overflow=scroll-vertical }
-		region { name=leftcolumn x=20 width=200 overflow=scroll-vertical }
-		region { name=trackcolumn width=max overflow=scroll-vertical }
-		
-		place { control="CoverImage" align=top width=200 height=200 }
-		
-		place { region=headerregion control=AlbumTitleLabel,ArtistLabel,leftcolumn dir=down }
-		place { region=leftcolumn  dir=down start=ArtistLabel spacing=10
-			control=CoverImage,TracksInfoLabel,PlayTracksButton }
-		place { region=leftcolumn	dir=down start=PlayTracksButton 
-			control=AddTracksToQueueButton,AddTracksToPlaylistButton,PlayAlbumButton,AddAlbumToQueueButton,AddAlbumToPlaylistButton,ShowAlbumButton,ShowAlbumInSystemButton}
-		place { region=trackcolumn control=*MusicPageDetailsTrack dir=down start=ArtistLabel x=230 width=max }
+	layout {
+		region {
+			name=album
+			width=max
+			height=max
+			overflow=allow-vertical
+		}
+		place {
+			control="CoverImage"
+			align=top
+			width=200
+			height=200
+			y=20
+			x=20
+		}
+		place {
+			control=PlayAlbumButton,PlayTracksButton
+			align=top
+			width=200
+			height=200
+			y=20
+			x=20
+		}
+		place {
+			control=AlbumTitleLabel
+			x=0
+			width=max
+			dir=right
+		}
+		place {
+			control=ArtistLabel
+			start=AlbumTitleLabel
+			dir=down
+			y=-60
+			x=240
+		}
+		place {
+			control=leftcolumn
+			region=headerregion
+			dir=down
+		}
+
+		place {
+			control=TracksInfoLabel
+			start=ArtistLabel
+			dir=down
+			spacing=10
+		}
+
+		place {
+			control=AddTracksToQueueButton,AddTracksToPlaylistButton,AddAlbumToQueueButton,AddAlbumToPlaylistButton,ShowAlbumButton,ShowAlbumInSystemButton
+			start=CoverImage
+			dir=down
+			y=10
+		}
+
+		place {
+			control=*MusicPageDetailsTrack
+			start=TracksInfoLabel
+			region=album
+			width=max
+			y=30
+			dir=down
+		}
 	}
 }

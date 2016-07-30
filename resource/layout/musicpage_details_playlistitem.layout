@@ -1,48 +1,56 @@
-"resource/layout/musicpage_details_playlistitem.layout"
-{
-	controls
-	{	
-		PositionLabel	{	controlname=Label	style="PositionLabelStyle"	labeltext=""	textalignment="east" }
-		TrackLabel { controlname=Label style="TrackLabelStyle" labeltext="" }
+"resource/layout/musicpage_details_playlistitem.layout" {
+	styles {
+		PositionLabelStyle {
+			bgcolor=none
+			textcolor=lightestGrey
+			font-size=16
+font-size=15
+font-size=14 [$LINUX]
+			font-family=basefont
+			font-weight=600
+			padding-top=4
+			padding-bottom=4
+			render_bg {
+				0="fill(x0,y0-2,x1+10,y1+2, black65)"
+			}
+		}
+
+		TrackLabelStyle {
+			bgcolor=none
+			textcolor=white
+			font-size=16
+font-size=15
+font-size=14 [$LINUX]
+			font-family=basefont
+			font-weight=400
+			padding-top=4
+			padding-bottom=4
+			render_bg {
+				0="fill(x0,y0-2,x1,y1+2, black65)"
+			}
+		}
+
+			TrackLabelStyle:hover {
+				textcolor="blue"
+			}
 	}
 
-	styles
-	{
-		PositionLabelStyle	
-		{ 
-			padding-bottom=10
-			padding-top=1
-			font-size=14
-			textcolor=Labeldisabled
-			font-family=basefont
-			font-weight=400 
-			bgcolor=none				
+	layout {
+		region {
+			name=panelregion
+			width=max
 		}
-		
-		TrackLabelStyle 
-		{ 
-			padding-bottom=10
-			padding-top=1
-			font-size=15
-			textcolor=Text2
-			font-family=basefont
-			font-weight=400 
-			bgcolor=none		
+
+		place {
+			control="PositionLabel"
+			region="panelregion"
+			width=20
 		}
-		
-		TrackLabelStyle:hover
-		{
-			textcolor="text"
+		place {
+			control="TrackLabel"
+			region="panelregion"
+			x=30
+			width=max
 		}
 	}
-	
-	
-	layout
-	{
-		region { name=panelregion width=max }
-		
-		place {	control="PositionLabel" width=40 region="panelregion"  }
-		place {	control="TrackLabel" x=50 region="panelregion" width=max }
-	}
-	
 }

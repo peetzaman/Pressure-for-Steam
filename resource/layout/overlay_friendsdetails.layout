@@ -1,76 +1,75 @@
 "resource/layout/overlay_friendsdetails.layout" {
-	controls {}
-	
 	colors {
 		lightestBlue="137 235 255 255"
-	}	
-	
+	}
+
 	styles {
 		button {
-			font-size=14
+			textcolor=blue
+			font-size=15
+font-size=14 [$LINUX]
 			font-family=basefont
-			
 			inset-left=0
 			padding-left=24
 			padding-top=0
 			padding-bottom=15
-			
 			minimum-width=160
-			
-			textcolor=blue
-					
+
 			render_bg {
-			//	0="fill(x0,y0,x1,y1, red)"
 				0="image(x0,y0,x0+26,y1, graphics/overlay/friends)"
 			}
 		}
-		
+
 			button:hover {
 				textcolor=lightestBlue
-				
+
 				render {
 					0="image(x0,y0,x0+26,y1, graphics/overlay/friends_hover)"
 				}
-				
 				render_bg {}
 			}
-		
+
 		FriendsGrid {
 			render_bg {}
-		}	
-		
+		}
+
 		highlight {
-			textcolor=lightestGreyHighlight
-			font-size=12
+			textcolor=lightestGrey
+			font-size=14
 		}
 	}
-	
+
 	layout {
 		region {
 			name=box
 			width=max
 			height=max
 		}
-				
-	//	place { control="TitleText" region=box }
-		
+
 		place {
 			controls=AllFriendsButton
 			region=box
-			y=0
 			x=0
+			y=0
 		}
-		
+
 		place {
 			controls=TextThisManyFriends
 			start=AllFriendsButton
 			dir=down
-			y=-14
 			x=30
+			y=-14
 		}
-	
-		place { 
-			controls=grid,ViewPlayersButton,TitleText
+
+		place {
+			controls=ViewPlayersButton
+			start=AllFriendsButton
+			x=18
+			y=0
+		}
+
+		place {
+			controls=grid,TitleText
 			width=0
 			height=0
 		}

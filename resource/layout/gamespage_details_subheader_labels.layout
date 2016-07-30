@@ -1,75 +1,72 @@
 "resource/layout/gamespage_details_subheader_labels.layout" {
-	controls {}
-
 	styles {
 		headertext {
-			font-size=13
-			textcolor=lightestGreyHighlight
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 		}
-
 		headertext-red {
-			font-size=13
-			textcolor=lightestGreyHighlight
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 		}
-
 		headertext-green {
-			font-size=13
-			textcolor=lightestGreyHighlight
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 		}
-
 		headertext-blue {
-			font-size=13
-			textcolor=lightestGreyHighlight
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 		}
-
 		valuetext {
-			font-size=13
-			textcolor=lightestGreyHighlight
+			textcolor=lightestGrey
+			font-size=15
+font-size=14 [$LINUX]
 		}
 	}
 
-
 	layout {
-		region { 
-			name="subheaderlabels" 
-			align=left 
-			y=0 
+		region {
+			name="subheaderlabels"
+			align=left
 			x=0
+			y=0
 		}
-
-		place { 
+		place {
 			control=totalplaytimeheader
 			region=subheaderlabels
 			x=0
 			y=0
 		}
-		
+
 		place {
 			control=totalplaytimevalue
 			start=totalplaytimeheader
 			x=6
 			dir=right
 		}
-		
-		place { 
+
+		place {
 			control=gameplayedheader
 			start=totalplaytimeheader
 			dir=down
 		}
-		
+
 		place {
 			control=gameplayedvalue
 			start=gameplayedheader
 			dir=right
 			x=6
 		}
-		
+
 		place {
 			control=streamheader
 			start=gameplayedheader
 			dir=down
 		}
-		
+
 		place {
 			control=streamvalue
 			start=streamheader

@@ -1,40 +1,43 @@
-"resource/layout/overlay_broadcastpanel.layout"
-{
-	controls
-	{
-		TitleText { controlname="label" labeltext="#Overlay_Broadcast_Panel_Title" style=detailsboxtitle }
-		InstructionText { controlname="label" labeltext="#Overlay_Broadcast_Panel_Text"  style=highlight }
-
-		ShowBroadcast { controlname="Button" labeltext="#Overlay_Broadcast_ShowBroadcast" command="ShowBroadcast" }
-		ShowChat { controlname="Button" labeltext="#Overlay_Broadcast_ShowChat" command="ShowChat" }
-		StopBroadcast { controlname="Button" labeltext="#Overlay_Broadcast_Stop" command="StopBroadcast" }
-		ShowSettings { controlname="Button" labeltext="#Overlay_Broadcast_ShowSettings" command="ShowSettings" }
-	}
-	
+"resource/layout/overlay_broadcastpanel.layout" {
 	styles {
-
 		Button {
-			font-size=13
+			font-size=15
+			font-size=14 [$LINUX]
 			font-family=basefont
 			font-weight=400
 			inset=2
+			textcolor=blue
+			render {}
+			render_bg {}
 		}
-
+			button:hover {
+				textcolor=lightestBlue
+			}
 		highlight {
-			textcolor=white
+			textcolor=lightestGrey
+			font-size=14
+			inset-left=30
 		}
 	}
-	
-	layout {
-		place { control="TitleText" width=0 height=0 }
-		place { control="InstructionText" y=0 }
 
-		place { 
-			control="ShowBroadcast,ShowChat,ShowSettings,StopBroadcast" 
-			y=20
-			spacing=10 
-			align=top
-			margin-bottom=0 
+	layout {
+		region {
+			name=box
+			width=max
+			height=max
+		}
+		place {
+			control="ShowChat,ShowBroadcast,StopBroadcast"
+			region=box
+			x=19
+			y=0
+			dir=right
+			spacing=8
+		}
+		place {
+			control=TitleText,ShowSettings,InstructionText
+			width=0
+			height=0
 		}
 	}
 }

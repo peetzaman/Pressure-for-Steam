@@ -1,56 +1,48 @@
 "resource/layout/overlay_achievement_item.layout" {
-	controls {
-		icon { controlname="ImagePanel" scaleimage=1 }
-		caption { controlname=label labeltext="#Overlay_Achievement_Recent" }
-		name { controlname=label style=name }
-	}
-	colors {}
-	
 	styles {
-		
 		label {
+			textcolor=white
 			font-size=15
-			textcolor=greyHighlight
+font-size=14 [$LINUX]
 		}
-	
+
 		name {
 			textcolor=white
 			font-size=26
 			font-family=semibold
+			font-weight=bold
 		}
-	
 	}
-
 	layout {
 		region {
 			name=body
 			width=max
 		}
-		
+
 		place {
-			region=body
 			control=icon
-			y=0
+			region=body
 			x=0
+			y=0
 			width=64
 			height=64
 		}
-		
+
 		place {
-			region=body
 			control=caption
+			region=body
 			start=icon
-			dir=right
 			x=10
 			y=12
+			dir=right
 		}
-		
+
 		place {
-			region=body
 			control=name
+			region=body
 			start=caption
-			dir=down
 			y=-4
+			dir=down
 		}
 	}
 }

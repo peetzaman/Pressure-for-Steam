@@ -1,27 +1,24 @@
 "resource/layout/overlaytaskbar.layout" {
-	controls {}
-	
 	styles {
 		taskbar {
-			font-size=14
+			textcolor=blue
+			font-size=15
+font-size=14 [$LINUX]
 			font-family=basefont
 			font-style=none
-			textcolor=blue
-			
-			render_bg {
-				//0="fill(x0,y0,x1,y1, red)"
-			}
-		}
-		
-		taskbar:hover {
-			textcolor=lightestBlue
-		}
-		
-		view_friends {}
+			padding-right=20
 
-		online_friends {}		
+			render_bg {}
+		}
+
+			taskbar:hover {
+				textcolor=lightestBlue
+			}
+
+		view_friends {}
+		online_friends {}
 	}
-	
+
 	layout {
 		region {
 			name=bottom
@@ -29,29 +26,29 @@
 			width=max
 			height=145
 		}
-		
+
 		place {
 			control="bottomarea"
 			region="bottom"
+			align=right
 			width=143
 			height=145
-			align=right
 		}
-		
+
 		place {
 			controls="WebBrowserButton,SettingsButton,MusicPlayerButton"
-			dir=down
-			spacing=4
 			region=bottom
 			align=right
-			margin-right=66
 			y=43
-		}	
-		
+			margin-right=46
+			dir=down
+			spacing=5
+		}
+
 		place {
 			control="SteamLogo,FriendPanel,view_friends,online_friends,ScreenshotsButton,TaskbarPanel"
 			width=0
 			height=0
 		}
-	}	
+	}
 }

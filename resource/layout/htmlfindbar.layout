@@ -1,89 +1,85 @@
 "resource/layout/htmlfindbar.layout" {
-	controls {}
-
 	styles {
 		FindEntry {
+			inset-left=0
 			render_bg{
 				1="image(x0-19, y0, x0+3, y0+25, graphics/search/left)"
-				2="image(x1-14, y0, x1-2, y0+25, graphics/search/right)"
-				3="image_tiled(x0+3, y0, x1-14, y0+25, graphics/search/inner)"
+				2="image(x1-8, y0, x1-2, y0+25, graphics/search/right)"
+				3="image_tiled(x0+3, y0, x1-8, y0+25, graphics/search/inner)"
 			}
 		}
-		
+
 		CloseButtonSm {
 			bgcolor=none
 			inset="0 0 0 0"
-			render_bg={}
 			image="graphics/tab_close"
+			render_bg{}
 		}
-		
 			CloseButtonSm:hover {
-				render_bg {}
 				image="graphics/tab_close_hover"
+				render_bg{}
 			}
-		
+
 		NextButtonSm {
 			bgcolor=none
 			inset="0 0 0 0"
-			render_bg={}
 			image="graphics/icon_down_default"
+			render_bg{}
 		}
-		
 			NextButtonSm:hover {
 				bgcolor=none
 				inset="0 0 0 0"
-				render_bg={}
 				image="graphics/icon_down_hover"
+				render_bg{}
 			}
-		
+
 		PrevButtonSm {
 			bgcolor=none
 			inset="0 0 0 0"
-			render_bg={}
 			image="graphics/icon_up_default"
+			render_bg{}
 		}
-		
 			PrevButtonSm:hover {
 				bgcolor=none
 				inset="0 0 0 0"
-				render_bg={}
 				image="graphics/icon_up_hover"
+				render_bg{}
 			}
 	}
-		
+
 	layout {
 		place {
 			control="FindEntry"
-			width=180
 			align=left
-			y=8
-			margin-right=26
+			y=7
+			width=180
 			margin-left=24
+			margin-right=26
 		}
-		
+
 		place {
 			control="FindCount"
-			width=70
 			align=right
-			y=8
-			margin-right=55
+			y=7
+			width=70
 			margin-left=6
 			margin-top=5
+			margin-right=55
 		}
-		
+
 		place {
-			control="Next,Previous,Close"
+			control="Previous,Next,Close"
 			align=right
-			height=24
 			width=22
+			height=24
+			margin-top=7
 			margin-right=5
-			margin-top=8
 		}
-			
+
 		place {
 			control="SearchThisPage"
-			height=0
 			width=0
+			height=0
 		}
 	}
 }
